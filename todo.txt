@@ -14,7 +14,7 @@
     "./node_modules/.bin/babel client --out-dir public --presets @babel/preset-react --source-maps inline"
 
 
-2. npm install after completing package.json []
+2. npm install after completing package.json [x]
 3. create file structure - what are all of the necessary files we need []
   // Client side []
     // index.html []
