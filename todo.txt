@@ -1,0 +1,34 @@
+1. structure package.json [x]
+  // ?? [x]
+  // scripts [x]
+  // dependencies [x]
+    // babel [x]
+    // bootstrap [x]
+    // react [x]
+    // nodemon [x]
+
+    dependencies are general packages required to run what I code
+    dev dependencies are things like babel, nodemon, etc.
+
+    babel gets requied in node moduel - we access this and run a script telling babel where ot compile files
+    "./node_modules/.bin/babel client --out-dir public --presets @babel/preset-react --source-maps inline"
+
+
+2. npm install after completing package.json []
+3. create file structure - what are all of the necessary files we need []
+  // Client side []
+    // index.html []
+      // where to include scripts for react and in what order []
+    // index.js for ReactDOM.render []
+    // react components []
+    // styles.css []
+  // Server Side
+    // server.js - this is where we create our server 'app' - routing goes here
+    // SchemaSQL
+    // controllers
+    // model
+    // connection.js??? this is where we create the db connection
+
+4. Create the index.html page
+5. Create App.jsx
+  // place all components in App.jsx (conditionally render based on state?)

@@ -1,0 +1,35 @@
+{
+  "name": "multi-step-checkout",
+  "version": "1.0.0",
+  "author": "Gregory Richens gregoryrichens@gmail.com",
+  "scripts": {
+    "compile": "./node_modules/.bin/babel client --out-dir public --presets @babel/preset-react --source-maps inline --watch",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregoryrichens/multi-step-checkout.git"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "lodash": "4.17.20",
+    "prop-types": "15.7.2",
+    "jquery": "3.5.1",
+    "express": "4.17.1",
+    "axios": "0.20.0",
+    "sequelize": "6.3.5",
+    "mysql": "2.18.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "7.10.5",
+    "@babel/preset-react": "^7.12.1",
+    "babel": "6.23.0",
+    "babel-cli": "6.26.0",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-react": "1.0.0",
+    "nodemon": "2.0.4"
+  }
+}
