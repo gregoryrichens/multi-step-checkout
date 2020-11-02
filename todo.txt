@@ -16,19 +16,20 @@
 
 2. npm install after completing package.json [x]
 3. create file structure - what are all of the necessary files we need []
-  // Client side []
-    // index.html []
-      // where to include scripts for react and in what order []
-    // index.js for ReactDOM.render []
-    // react components []
-    // styles.css []
+  // Client side [x]
+    // index.html [x]
+    // index.js for ReactDOM.render [x]
+    // react components [x]
+    // styles.css [x]
   // Server Side
-    // server.js - this is where we create our server 'app' - routing goes here
-    // SchemaSQL
-    // controllers
-    // model
-    // connection.js??? this is where we create the db connection
+    // server.js - this is where we create our server 'app' - routing goes here [x]
+    // SchemaSQL [x]
+    // controllers [x]
+    // model [x]
+    // connection.js??? this is where we create the db connection [x]
 
 4. Create the index.html page
 5. Create App.jsx
   // place all components in App.jsx (conditionally render based on state?)
+
+// where to include scripts for react and in what order []
