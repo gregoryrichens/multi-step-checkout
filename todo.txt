@@ -43,7 +43,28 @@
   // show all details on last page [x]
     // format the component to expect appropriate key value pairs [x]
     // can pull from state as a test [x]
-  // where do I throw in a GET request for the final page []?????
+  // where do I throw in a GET request for the final page [x] get request not necessary
+
+6. Create database
+  // write SQL schema [x]
+  // run the schema [x]
+  // create a database connection in connection.js [x]
+
+7 Create a server
+  // generate a server via express in server.js
+  // install middleware
+  // create routing for POST and get requests
+
+8 Build controllers
+  // method that handles req res for get and post requests
+  // build post query based on incoming key value keys
+
+9 Build Models
+  // accesses the connection and sends the query and callback
+  // test queries with postman
+
+10 Tie it all together
+  // build axios calls on the front end
 
 // where to include scripts for react and in what order [x]
 include them in the head. You can typically look up "cdn address" for
