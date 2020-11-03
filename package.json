@@ -4,7 +4,7 @@
   "author": "Gregory Richens gregoryrichens@gmail.com",
   "scripts": {
     "compile": "./node_modules/.bin/babel client --out-dir public --presets @babel/preset-react --source-maps inline --watch",
-    "live": "live-server client/index.html",
+    "live": "live-server",
     "start": "nodemon server/server.js"
   },
   "repository": {

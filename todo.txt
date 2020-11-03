@@ -29,6 +29,13 @@
     // connection.js??? this is where we create the db connection [x]
 
 4. Create the index.html page
+    // doctype [x]
+    // head[x]
+      // meta charset utf 8 [x]
+    // body [x]
+      // div container for "app" [x]
+      // script tags for react and index.js file [x]
+      // script tag of App [x]
 5. Create App.jsx
   // place all components in App.jsx (conditionally render based on state?)
 
