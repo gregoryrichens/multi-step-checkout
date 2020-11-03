@@ -2,7 +2,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'home'
+      page: 'home',
+      user: {}
     };
 
     App.prototype.handleNext = App.prototype.handleNext.bind(this);
@@ -10,18 +11,45 @@ class App extends React.Component {
 
   handleNext (e) {
     e.preventDefault();
-    console.log(e);
-    var $formData = $(e.target);
-    console.log($formData.serializeArray());
+
+    // store input field name and value
+    // as a key value pair in an array of objects
+    var $form = $(e.target);
+    var formData = $form.serializeArray();
+    var newUser = Object.assign({}, this.state.user);
+
+    if (formData.length > 0) {
+      formData.forEach((input) => {
+        newUser[input["name"]] = input["value"];
+      });
+    }
+
+    console.log(newUser);
+
+    // set current page state based on where next is clicked
     var currentPage = this.state.page;
     var nextPage;
     if (currentPage === 'home') { nextPage = 'form one'; }
-    if (currentPage === 'form one') { nextPage = 'form two'; }
-    if (currentPage === 'form two') { nextPage = 'form three'; }
+    if (currentPage === 'form one') {
+      nextPage = 'form two';
+
+      // api call to post data from form one
+    }
+    if (currentPage === 'form two') {
+      nextPage = 'form three';
+
+      // api call to post data from form two
+    }
     if (currentPage === 'form three') { nextPage = 'confirmation'; }
-    if (currentPage === 'confirmation') { nextPage = 'home'; }
+
+      // api call to post data from form three
+    if (currentPage === 'confirmation') {
+      nextPage = 'home';
+      newUser = {};
+    }
     this.setState({
-      page: nextPage
+      page: nextPage,
+      user: newUser
     });
   }
 
@@ -44,7 +72,7 @@ class App extends React.Component {
     } else if (this.state.page === 'form three') {
       return <FormThree />;
     } else if (this.state.page === 'confirmation') {
-      return <Confirmation />;
+      return <Confirmation userData={this.state.user}/>;
     }
   }
 }
@@ -100,9 +128,20 @@ var FormThree = function(props) {
 
 // confirmation component\
 var Confirmation = function (props) {
-  var currentPage = 'confirmation';
   return (
     <div>
+      <h3>Contact Info</h3>
+        <p>Name: {props.userData.name}</p>
+        <p>Address line 1: {props.userData.addressOne}</p>
+        <p>Address line 2: {props.userData.addressTwo}</p>
+        <p>City: {props.userData.city}</p>
+        <p>State: {props.userData.state}</p>
+        <p>Zip Code: {props.userData.zip}</p>
+      <h3>Billing Info</h3>
+        <p>Credit Card: {props.userData.creditCard}</p>
+        <p>CVV: {props.userData.cvv}</p>
+        <p>Expiration Date: {props.userData.expiration}</p>
+        <p>Billing Zip: {props.userData.billingZip}</p>
       <button type="button" name="confirmation-button" className="confirmation-button" onClick={(e) => App.prototype.handleNext(e)}>Purchase</button>
     </div>
   );

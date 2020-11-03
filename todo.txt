@@ -28,7 +28,7 @@
     // model [x]
     // connection.js??? this is where we create the db connection [x]
 
-4. Create the index.html page
+4. Create the index.html page [x]
     // doctype [x]
     // head[x]
       // meta charset utf 8 [x]
@@ -36,7 +36,16 @@
       // div container for "app" [x]
       // script tags for react and index.js file [x]
       // script tag of App [x]
-5. Create App.jsx
-  // place all components in App.jsx (conditionally render based on state?)
+5. Create App.jsx []
+  // all other app setup [x]
+  // iterate through serialized form data and push to state [x]
+  // comment lines for API calls [x]
+  // show all details on last page [x]
+    // format the component to expect appropriate key value pairs [x]
+    // can pull from state as a test [x]
+  // where do I throw in a GET request for the final page []?????
 
-// where to include scripts for react and in what order []
+// where to include scripts for react and in what order [x]
+include them in the head. You can typically look up "cdn address" for
+most modules that you are looking to use. This avoids difficulty with
+import statements, which can cause problems.
