@@ -45,15 +45,15 @@
     // can pull from state as a test [x]
   // where do I throw in a GET request for the final page [x] get request not necessary
 
-6. Create database
+6. Create database [x]
   // write SQL schema [x]
   // run the schema [x]
   // create a database connection in connection.js [x]
 
-7 Create a server
-  // generate a server via express in server.js
-  // install middleware
-  // create routing for POST and get requests
+7 Create a server []
+  // generate a server via express in server.js []
+  // install middleware - json parser []
+  // create routing for POST and get requests []
 
 8 Build controllers
   // method that handles req res for get and post requests
