@@ -18,6 +18,7 @@ class App extends React.Component {
     var formData = $form.serializeArray();
     var newUser = Object.assign({}, this.state.user);
 
+    // inserting form data into an object which we will use to set state
     if (formData.length > 0) {
       formData.forEach((input) => {
         newUser[input["name"]] = input["value"];
@@ -25,6 +26,9 @@ class App extends React.Component {
     }
 
     console.log(newUser);
+
+    //store this context in a variable for promise function
+    var self = this;
 
     // set current page state based on where next is clicked
     var currentPage = this.state.page;
@@ -34,13 +38,18 @@ class App extends React.Component {
       nextPage = 'form two';
 
       // api call to post data from form one
-      axios.post('/formOne', {
-        name: newUser["name"],
-        email: newUser["email"],
-        password: newUser["password"]
+      axios.post('http://localhost:3000/formOne', {
+        name: newUser['name'],
+        email: newUser['email'],
+        password: newUser['password']
       }).then((response) => {
         console.log(response);
         //set state with the id from the database
+        newUser['id'] = response.data;
+        self.setState({
+          page: nextPage,
+          user: newUser
+        });
       }).catch((error) => {
         console.log(error);
       });
@@ -50,16 +59,20 @@ class App extends React.Component {
       nextPage = 'form three';
 
       // api call to post data from form two
-      axios.post('/formTwo', {
-        id: newUser[id],
-        addressOne: newUser["addressOne"],
-        addressTwo: newUser["addressTwo"],
-        city: newUser["city"],
-        state: newUser["state"],
-        zip: newUser["zip"],
-        tel: newUser["tel"]
+      axios.post('http://localhost:3000/formTwo', {
+        id: newUser['id'],
+        addressOne: newUser['addressOne'],
+        addressTwo: newUser['addressTwo'],
+        city: newUser['city'],
+        state: newUser['state'],
+        zip: newUser['zip'],
+        tel: newUser['tel']
       }).then((response) => {
         console.log(response.data);
+        self.setState({
+          page: nextPage,
+          user: newUser
+        });
       }).catch((error) => {
         console.log(error);
       });
@@ -68,14 +81,18 @@ class App extends React.Component {
       nextPage = 'confirmation';
 
        // api call to post data from form three
-       axios.post('/formThree', {
-        id: newUser[id],
-        creditCard: newUser["creditCard"],
-        cvv: newUser["cvv"],
-        expiration: newUser["expiration"],
-        billingZip: newUser["billingZip"]
+       axios.post('http://localhost:3000/formThree', {
+        id: newUser['id'],
+        creditCard: newUser['creditCard'],
+        cvv: newUser['cvv'],
+        expiration: newUser['expiration'],
+        billingZip: newUser['billingZip']
       }).then((response) => {
         console.log(response.data);
+        self.setState({
+          page: nextPage,
+          user: newUser
+        });
       }).catch((error) => {
         console.log(error);
       });
@@ -84,11 +101,11 @@ class App extends React.Component {
     if (currentPage === 'confirmation') {
       nextPage = 'home';
       newUser = {};
+      self.setState({
+        page: nextPage,
+        user: newUser
+      });
     }
-    this.setState({
-      page: nextPage,
-      user: newUser
-    });
   }
 
 

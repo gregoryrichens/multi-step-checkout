@@ -34,8 +34,6 @@ const postUser = (req, res) => {
       res.sendStatus(404);
       console.log(err);
     } else {
-      console.log(results.insertId);
-      res.sendStatus(200);
       res.json(results.insertId);
     }
   });
