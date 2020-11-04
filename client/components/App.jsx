@@ -34,15 +34,53 @@ class App extends React.Component {
       nextPage = 'form two';
 
       // api call to post data from form one
+      axios.post('/formOne', {
+        name: newUser["name"],
+        email: newUser["email"],
+        password: newUser["password"]
+      }).then((response) => {
+        console.log(response);
+        //set state with the id from the database
+      }).catch((error) => {
+        console.log(error);
+      });
     }
+
     if (currentPage === 'form two') {
       nextPage = 'form three';
 
       // api call to post data from form two
+      axios.post('/formTwo', {
+        id: newUser[id],
+        addressOne: newUser["addressOne"],
+        addressTwo: newUser["addressTwo"],
+        city: newUser["city"],
+        state: newUser["state"],
+        zip: newUser["zip"],
+        tel: newUser["tel"]
+      }).then((response) => {
+        console.log(response.data);
+      }).catch((error) => {
+        console.log(error);
+      });
     }
-    if (currentPage === 'form three') { nextPage = 'confirmation'; }
+    if (currentPage === 'form three') {
+      nextPage = 'confirmation';
 
-      // api call to post data from form three
+       // api call to post data from form three
+       axios.post('/formThree', {
+        id: newUser[id],
+        creditCard: newUser["creditCard"],
+        cvv: newUser["cvv"],
+        expiration: newUser["expiration"],
+        billingZip: newUser["billingZip"]
+      }).then((response) => {
+        console.log(response.data);
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
+
     if (currentPage === 'confirmation') {
       nextPage = 'home';
       newUser = {};

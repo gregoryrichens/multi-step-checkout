@@ -7,6 +7,8 @@ var controller = require('./controller/customers.js');
 app.use(express.json());
 
 app.post('/formOne', controller.postUser);
+app.post('/formOne', controller.postUser);
+app.post('/formOne', controller.postUser);
 
 app.get('/', (req, res) => {
   res.send('Hello World');

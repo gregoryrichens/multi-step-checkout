@@ -10,7 +10,7 @@ db.connection.connect(function(err) {
   }
 });
 
-const dbPostUser = (data, callback) => {
+const dbPostUser = (data, queryString, callback) => {
   // do we need a separate post function for each
   db.connection.query(queryString, (err, results) => {
     if (err) {

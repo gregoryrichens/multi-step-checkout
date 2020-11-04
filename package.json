@@ -12,15 +12,15 @@
     "url": "https://github.com/gregoryrichens/multi-step-checkout.git"
   },
   "dependencies": {
+    "axios": "^0.20.0",
+    "express": "4.17.1",
+    "jquery": "3.5.1",
+    "lodash": "4.17.20",
+    "mysql": "2.18.1",
+    "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "lodash": "4.17.20",
-    "prop-types": "15.7.2",
-    "jquery": "3.5.1",
-    "express": "4.17.1",
-    "axios": "0.20.0",
-    "sequelize": "6.3.5",
-    "mysql": "2.18.1"
+    "sequelize": "6.3.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
